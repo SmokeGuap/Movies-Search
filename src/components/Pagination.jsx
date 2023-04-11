@@ -28,13 +28,13 @@ const Pagination = (props) => {
   };
 
   return (
-    <nav className='flex justify-center text-xl mt-5'>
+    <nav className='flex justify-center text-xl my-5 '>
       <ul className='list-style-none flex text-white'>
         {currentPage == 1 ? (
           <li className='rounded px-3 py-1.5'>Prev</li>
         ) : (
           <li
-            className='cursor-pointer rounded px-3 py-1.5 hover:bg-violet-800'
+            className='cursor-pointer rounded px-3 py-1.5 hover:bg-violet-800 transition duration-400'
             onClick={onPrevious}
           >
             Prev
@@ -53,7 +53,6 @@ const Pagination = (props) => {
               <li
                 key={id}
                 className='cursor-pointer rounded bg-violet-400 px-3 py-1.5'
-                onClick={() => onPageChange(pageNumber)}
               >
                 {pageNumber}
               </li>
@@ -62,7 +61,7 @@ const Pagination = (props) => {
           return (
             <li
               key={id}
-              className='cursor-pointer rounded px-3 py-1.5 hover:bg-violet-800'
+              className='cursor-pointer rounded px-3 py-1.5 hover:bg-violet-800 transition duration-400'
               onClick={() => onPageChange(pageNumber)}
             >
               {pageNumber}
@@ -73,7 +72,7 @@ const Pagination = (props) => {
           <li className='rounded px-3 py-1.5'>Next</li>
         ) : (
           <li
-            className='cursor-pointer rounded px-3 py-1.5 hover:bg-violet-800'
+            className='cursor-pointer rounded px-3 py-1.5 hover:bg-violet-800 transition duration-400'
             onClick={onNext}
           >
             Next

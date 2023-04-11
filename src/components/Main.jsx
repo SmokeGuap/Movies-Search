@@ -4,9 +4,7 @@ import Movies from './Movies';
 import image from '../assets/image.jpg';
 import Pagination from './Pagination';
 
-let PageSize = 2;
-
-function Main() {
+function Main({ pageSize }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [movies, setMovies] = useState([
     {
@@ -77,10 +75,10 @@ function Main() {
     },
   ]);
   const currentTableData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * PageSize;
-    const lastPageIndex = firstPageIndex + PageSize;
+    const firstPageIndex = (currentPage - 1) * pageSize;
+    const lastPageIndex = firstPageIndex + pageSize;
     return movies.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage]);
+  }, [currentPage, pageSize]);
 
   // useEffect(() => {
   //   fetch('https://imdb-api.com/en/API/SearchMovie/k_t5ttnx54/matrix')
@@ -100,7 +98,7 @@ function Main() {
       <Pagination
         currentPage={currentPage}
         totalCount={movies.length}
-        pageSize={PageSize}
+        pageSize={pageSize}
         onPageChange={(page) => setCurrentPage(page)}
       />
     </main>

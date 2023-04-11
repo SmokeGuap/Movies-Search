@@ -1,7 +1,8 @@
 import movies from '../assets/movies.svg';
+import PageSize from './PageSize';
 import Search from './Search';
 
-function Header() {
+function Header({ pageSize, changePageSize }) {
   return (
     <header className='sticky top-0'>
       <nav className='bg-violet-400/25 py-5'>
@@ -17,9 +18,7 @@ function Header() {
               <Search />
             </li>
             <li>
-              <a href='#' className='block text-white'>
-                History
-              </a>
+              <PageSize pageSize={pageSize} changePageSize={changePageSize} />
             </li>
           </ul>
         </div>
