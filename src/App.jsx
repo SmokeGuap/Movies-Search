@@ -11,12 +11,11 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <Context.Provider value={{ movies, setMovies, loading, setLoading }}>
+    <Context.Provider
+      value={{ movies, setMovies, loading, setLoading, pageSize, setPageSize }}
+    >
       <div className='bg-gradient-to-tr from-gray-900 via-purple-900 to-violet-600'>
-        <Header
-          pageSize={pageSize}
-          changePageSize={(e) => setPageSize(e.target.value)}
-        />
+        <Header />
         <Main pageSize={pageSize} />
         <Footer />
       </div>

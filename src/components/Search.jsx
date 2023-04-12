@@ -13,11 +13,12 @@ function Search() {
       }/${search}`
     );
     const result = await res.json();
-    alert(
-      result?.errorMessage
-        ? result.errorMessage
-        : 'Movies not found by this title'
-    );
+    console.log(result);
+    result.errorMessage != ''
+      ? alert(result.errorMessage)
+      : result.results.length == 0
+      ? alert('Movies not found by this title')
+      : null;
     setLoading(false);
     setMovies(result.results);
   };

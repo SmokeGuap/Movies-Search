@@ -1,4 +1,9 @@
-function PageSize({ pageSize, changePageSize }) {
+import { useContext } from 'react';
+import { Context } from '../App';
+
+function PageSize() {
+  const { pageSize, setPageSize } = useContext(Context);
+
   return (
     <div className='flex text-end text-white'>
       <label htmlFor='size' className='ml-2 self-center w-1/2'>
@@ -10,7 +15,7 @@ function PageSize({ pageSize, changePageSize }) {
         type='number'
         min={1}
         value={pageSize}
-        onChange={changePageSize}
+        onChange={(e) => setPageSize(e.target.value)}
       />
     </div>
   );
