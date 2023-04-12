@@ -5,13 +5,19 @@ import { Context } from '../App';
 function Search() {
   const [search, setSearch] = useState('');
   const { setMovies, setLoading } = useContext(Context);
-
   const handleSearch = async () => {
     setLoading(true);
     const res = await fetch(
-      `https://imdb-api.com/en/API/SearchMovie/k_t5ttnx54/${search}`
+      `https://imdb-api.com/en/API/SearchMovie/${
+        import.meta.env.VITE_API_KEY
+      }/${search}`
     );
     const result = await res.json();
+    alert(
+      result?.errorMessage
+        ? result.errorMessage
+        : 'Movies not found by this title'
+    );
     setLoading(false);
     setMovies(result.results);
   };

@@ -1,7 +1,6 @@
 import { useContext, useMemo } from 'react';
 import { useState } from 'react';
 import Movies from './Movies';
-import image from '../assets/image.jpg';
 import Pagination from './Pagination';
 import { Context } from '../App';
 
