@@ -7,9 +7,11 @@ function Search() {
         <img src={search} className='w-5 h-5' />
       </div>
       <input
+        // className='block w-full p-4 pl-10 text-sm text-violet-500 rounded-lg placeholder-violet-400 focus:outline-none'
         className='block w-full p-4 pl-10 text-sm text-violet-500 rounded-lg placeholder-violet-400 focus:outline-none'
         placeholder='Search'
       />
+      {/* <button className='text-white absolute right-2.5 bottom-2 rounded-lg text-sm px-4 py-2 bg-violet-600 hover:bg-violet-800 transition duration-400'> */}
       <button className='text-white absolute right-2.5 bottom-2 rounded-lg text-sm px-4 py-2 bg-violet-600 hover:bg-violet-800 transition duration-400'>
         Search
       </button>
