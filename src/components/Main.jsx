@@ -4,27 +4,15 @@ import Movies from './Movies';
 import Pagination from './Pagination';
 import { Context } from '../App';
 
-function Main({ pageSize }) {
-  const { movies, loading } = useContext(Context);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const currentTableData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * pageSize;
-    const lastPageIndex = firstPageIndex + pageSize;
-    return movies.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, pageSize, movies]);
+function Main() {
+  const { movies, loading, setCurrentPage } = useContext(Context);
 
   return (
     <main className='text-white min-h-[calc(100vh-180px)] '>
       {movies.length != 0 ? (
         <>
-          <Movies movies={currentTableData} />
-          <Pagination
-            currentPage={currentPage}
-            totalCount={movies.length}
-            pageSize={pageSize}
-            onPageChange={(page) => setCurrentPage(page)}
-          />
+          <Movies />
+          <Pagination />
         </>
       ) : loading ? (
         <div className='font-medium w-screen text-center pt-20'>Loading...</div>

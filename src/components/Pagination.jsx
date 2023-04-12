@@ -1,13 +1,11 @@
+import { useContext } from 'react';
 import { usePagination, DOTS } from '../hooks/usePagination';
+import { Context } from '../App';
 
-const Pagination = (props) => {
-  const {
-    onPageChange,
-    totalCount,
-    siblingCount = 1,
-    currentPage,
-    pageSize,
-  } = props;
+const Pagination = () => {
+  const { pageSize, currentPage, setCurrentPage, movies } = useContext(Context);
+  const totalCount = movies.length;
+  const siblingCount = 1;
 
   const paginationRange = usePagination({
     currentPage,
@@ -20,11 +18,11 @@ const Pagination = (props) => {
     return null;
   }
   const onNext = () => {
-    onPageChange(currentPage + 1);
+    setCurrentPage(currentPage + 1);
   };
 
   const onPrevious = () => {
-    onPageChange(currentPage - 1);
+    setCurrentPage(currentPage - 1);
   };
 
   return (

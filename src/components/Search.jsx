@@ -13,7 +13,7 @@ function Search() {
       }/${search}`
     );
     const result = await res.json();
-    console.log(result);
+    
     result.errorMessage != ''
       ? alert(result.errorMessage)
       : result.results.length == 0
