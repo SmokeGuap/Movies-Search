@@ -1,4 +1,4 @@
-# Frontend for Note App
+# Movie Search
 
 Movie Search with pagination
 
