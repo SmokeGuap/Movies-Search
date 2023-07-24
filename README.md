@@ -2,6 +2,12 @@
 
 Movie Search with pagination
 
+## Screenshots
+
+<img src="https://github.com/SmokeGuap/Movies-Search/assets/87711568/9fbb30d5-e047-473a-8a0e-0aac4312b07b" width="500">
+P.S. At the moment API from `(https://imdb-api.com/en/API/)` doesn't work (the free plan (test account) will be removed), and there are no films in the screenshots.
+
+
 ## Used technologies
 
 - React
